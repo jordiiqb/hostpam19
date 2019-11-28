@@ -11,3 +11,22 @@ En el repositori es troben tots els fitxers necessaris per la creació d'un dock
 En aquest servidor pam, quan un usuari local (anna, jordi) vulguin canviar-se el seu finger amb l'ordre chfn, hauran de respondre una pregunta matemàtica per tal d'autenticar-se.
 
 S'utilitzaran un script en python "pamaware.py" que en executar-se verificarà que qui l'executi sigui un usuari unix vàlid i un mòdul de pam "pam_mates.py" que farà la pregunta matemàtica.
+
+### COM UTILITZAR EL CONTAINER
+
+*Arrencar en mode interactiu*
+> $ docker run --rm --name pam -h pam -it jordiiqb/hostapm19:aware /bin/bash
+
+Un cop dins fer:
+
+> \# bash startup.sh
+
+**I ja es poden fer servir les apps:**
+
+Com a root
+
+> \# python pamaware.py
+
+Com a usuari
+
+> $ chfn
