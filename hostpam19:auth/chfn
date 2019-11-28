@@ -1,0 +1,8 @@
+#%PAM-1.0
+#auth       include      chfn-include
+#auth       optional     pam_echo.so [INCLUDE] 
+auth       substack     chfn-substack
+auth       optional     pam_echo.so [SUBSTACK]
+account    include      system-auth
+#password   include      system-auth
+#session    include      system-auth

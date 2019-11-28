@@ -1,0 +1,6 @@
+#%PAM-1.0
+auth    [default=ignore success=2]  pam_succeed_if.so uid = 1001
+auth    optional     pam_echo.so  [USER DOES NOT HAVE  UID 1001]
+auth    requisite    pam_deny.so
+auth    optional     pam_echo.so  [USER HAS UID 1001]
+auth    requisite    pam_permit.so
